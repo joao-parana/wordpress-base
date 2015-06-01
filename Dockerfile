@@ -11,4 +11,7 @@ RUN docker-php-ext-install mysqli
 
 ADD wordpress-4.2.2-pt_BR.tar.gz /var/www/html
 
+# Removing /var/www/html/wp-content to use with VOLUME on host computer
+RUN rm -rf /var/www/html/wp-content
+
 CMD ["/bin/bash"]
