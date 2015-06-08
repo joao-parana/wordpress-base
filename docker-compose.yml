@@ -1,2 +1,21 @@
 wpbase:
   build: .
+  volumes: 
+    - ~/Desktop/Development/wpbase/configs:~/etc/configs/:ro
+    - ~/Desktop/Development/wpbase/wp-content:/var/www/html/wp-content
+    - ~/Desktop/Development/wpbase/backup:/backup
+  net: "bridge"
+  ports:
+    - "4722:22"
+    - "4706:3306"
+    - "4780:80"  
+#
+# Criar os diretórios abaixo
+#
+# mkdir -p ~/Desktop/Development/wpbase/configs 
+# mkdir -p ~/Desktop/Development/wpbase/wp-content 
+# mkdir -p ~/Desktop/Development/wpbase/backup
+# 
+# Importante: Execute o comando abaixo para copiar a Tradução pt_BR
+# tar -C ~/Desktop/Development/wpbase -xf wp-content.tar
+ 
