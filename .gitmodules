@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/odin"]
+	path = wp-content/themes/odin
+	url = https://github.com/wpbrasil/odin.git

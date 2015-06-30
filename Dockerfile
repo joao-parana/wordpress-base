@@ -1,4 +1,6 @@
 FROM php:5.6-apache
+# 
+MAINTAINER João Antonio Ferreira "joao.parana@gmail.com"
 
 RUN a2enmod rewrite
 
@@ -14,9 +16,14 @@ ADD wordpress-4.2.2-pt_BR.tar.gz /var/www/html
 # Removing /var/www/html/wp-content to use with VOLUME on host computer
 RUN rm -rf /var/www/html/wp-content
 
-CMD ["/bin/bash"]
+# setting the image’s main command, allowing that image to be run as though it was that command
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
-# Nesta imagem temos a seguinte saida do comando find abaixo:
+# use CMD as the default flags
+CMD ["--help"]
+
+# PHP modules installed:
 #
 # find /usr/src/php/ext -mindepth 2 -maxdepth 2 -type f -name 'config.m4' | cut -d/ -f6 | sort
 # 
@@ -29,3 +36,4 @@ CMD ["/bin/bash"]
 # sysvmsg, sysvsem, sysvshm, tidy, tokenizer, wddx, xml, xmlreader, xmlrpc, 
 # xmlwriter, xsl, zip
 #
+# 

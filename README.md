@@ -13,7 +13,7 @@ This **Dockerfile** is a [trusted build](https://registry.hub.docker.com/u/paran
 docker pull parana/wordpress-base
 ```
 
-Define in your .bash_profile this utility function:
+If you is using Windows (with MSYS) or MAC OSX define in your .bash_profile this utility function:
 
 ```
 docker-ip() { 
@@ -21,4 +21,5 @@ docker-ip() {
 } 
 ```
 
-You need to create another image to use this.
+There is a GIT submodule in this project for `Odin theme` from [https://github.com/wpbrasil/odin](https://github.com/wpbrasil/odin) at path `wp-content/themes/odin`. This is very nice theme from some guys in Brazil.
+
