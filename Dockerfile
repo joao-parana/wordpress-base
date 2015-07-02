@@ -18,6 +18,7 @@ RUN rm -rf /var/www/html/wp-content
 
 # setting the image’s main command, allowing that image to be run as though it was that command
 COPY ./docker-entrypoint.sh /
+RUN chmod a+rx /docker-entrypoint.sh 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # use CMD as the default flags

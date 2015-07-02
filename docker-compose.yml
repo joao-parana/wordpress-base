@@ -9,6 +9,7 @@ wpbase:
     - "4722:22"
     - "4706:3306"
     - "4780:80"  
+  command: sleep 200
 # 
 # Note: You can copy pt_BR wordpress instalation to working directory using:
 # tar -C ~/Desktop/Wordpress-pt_BR  -xzf wordpress-4.2.2-pt_BR.tar.gz
